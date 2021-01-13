@@ -1,15 +1,13 @@
-import 'package:factory_method/dialogfactory.dart';
 import 'package:flutter/material.dart';
-//import 'package:shared_preferences/shared_preferences.dart';
 
-import 'dialog_action.dart';
+import '../dialogfactory.dart';
+import '../dialog_action.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,17 +24,16 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title /*, this.platformLayout*/}) : super(key: key);
+  MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
-  //final String platformLayout;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int radioValue = 1;
+  int radioValue = -1;
 
   void _handleRadioValueChange(int value) {
     setState(() {
@@ -47,9 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void _openDialog() {
     DialogFactory.showAlertDialog(
       context,
+      radioValue: radioValue,
       title: Text('Alert Dialog!!!'),
       content: Text(
-          'THIS IS AN ALERT DIALOG! IT MEANS YOU SHOULD BE IN ALERT STATE, RIGHT?'),
+          'This is an alert dialog! It means you should be in alert state... right?'),
       actions: [
         DialogAction(
           child: Text('YES'),
@@ -73,13 +71,13 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Radio(
+            new Radio(
               value: 0,
               groupValue: radioValue,
               onChanged: _handleRadioValueChange,
             ),
             new Text('IOS'),
-            Radio(
+            new Radio(
               value: 1,
               groupValue: radioValue,
               onChanged: _handleRadioValueChange,
