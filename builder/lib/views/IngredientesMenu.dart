@@ -10,21 +10,34 @@ class IngredientesMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(50.0),
-      child: Column(
-        children: [
-          Text('Ingredientes'),
-          SizedBox(height: 20),
-          Text(
-            burger.getIngredientes(),
-            textAlign: TextAlign.justify,
-          ),
-          SizedBox(height: 50),
-          Text('Preço'),
-          SizedBox(height: 20),
-          Text(burger.getPrice()),
-        ],
+    return Container(
+      color: Colors.purple,
+      child: Padding(
+        padding: const EdgeInsets.all(50.0),
+        child: Column(
+          children: [
+            Text(
+              'Ingredientes',
+              style: TextStyle(color: Colors.white),
+            ),
+            SizedBox(height: 20),
+            Text(
+              burger.getIngredientes(),
+              textAlign: TextAlign.justify,
+              style: TextStyle(color: Colors.white),
+            ),
+            SizedBox(height: 50),
+            Text(
+              'Preço',
+              style: TextStyle(color: Colors.white),
+            ),
+            SizedBox(height: 20),
+            Text(
+              burger.getPrice(),
+              style: TextStyle(color: Colors.white),
+            ),
+          ],
+        ),
       ),
     );
   }

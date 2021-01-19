@@ -1,6 +1,6 @@
 import 'package:builder/burgerbuilderbase.dart';
 import 'package:builder/models/burgers/CarameladoCrocante.dart';
-import 'package:builder/models/burgers/DoceFogo.dart';
+import 'package:builder/models/burgers/DoceArdente.dart';
 import 'package:builder/models/burgers/TropicalTemperado.dart';
 import 'package:builder/models/burgers/burgermodel.dart';
 import 'package:flutter/material.dart';
@@ -41,8 +41,8 @@ class _MenuState extends State<Menu> {
         burgerBuilder: CarameladoCrocante(),
       ),
       MenuItem(
-        label: 'Doce Fogo',
-        burgerBuilder: DoceFogo(),
+        label: 'Doce Ardente',
+        burgerBuilder: DoceArdente(),
       ),
       MenuItem(
         label: 'Tropical Temperado',
@@ -74,25 +74,26 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        DropdownButton<MenuItem>(
-          value: _selectedMenuBurger,
-          icon: Image.asset(
-            "assets/burger.png",
-            //height: 15,
-            //width: 34,
+        Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: DropdownButton<MenuItem>(
+            value: _selectedMenuBurger,
+            icon: Icon(
+              Icons.fastfood,
+              color: Colors.purple,
+              size: 30.00,
+            ),
+            style: TextStyle(color: Colors.purple, fontSize: 20),
+            items: menu
+                .map<DropdownMenuItem<MenuItem>>(
+                  (MenuItem burger) => DropdownMenuItem<MenuItem>(
+                    value: burger,
+                    child: Text(burger.label),
+                  ),
+                )
+                .toList(),
+            onChanged: burgerChange,
           ),
-          iconSize: 24,
-          elevation: 16,
-          style: TextStyle(color: Colors.deepPurple),
-          items: menu
-              .map<DropdownMenuItem<MenuItem>>(
-                (MenuItem burger) => DropdownMenuItem<MenuItem>(
-                  value: burger,
-                  child: Text(burger.label),
-                ),
-              )
-              .toList(),
-          onChanged: burgerChange,
         ),
         IngredientesMenu(burger: selectedBurger),
       ],

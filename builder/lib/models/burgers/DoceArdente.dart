@@ -6,8 +6,8 @@ import 'package:builder/models/ingredientes/queijos/catupiry.dart';
 import 'package:builder/models/ingredientes/queijos/queijo_mussarela.dart';
 import 'package:builder/models/ingredientes/salada/rucula.dart';
 
-class DoceFogo extends BurgerBuilderBase {
-  DoceFogo() {
+class DoceArdente extends BurgerBuilderBase {
+  DoceArdente() {
     price = 15.0;
   }
 

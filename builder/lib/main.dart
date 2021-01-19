@@ -40,15 +40,24 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('Menu',
-                style: TextStyle(color: Colors.deepPurple, fontSize: 40)),
-            Menu(),
-          ],
-        ),
+      body: Stack(
+        children: [
+          Container(color: Colors.purple[100]),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 50.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Text('Menu',
+                      style: TextStyle(color: Colors.purple, fontSize: 40)),
+                  SizedBox(height: 100),
+                  Menu(),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
