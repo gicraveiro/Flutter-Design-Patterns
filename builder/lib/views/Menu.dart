@@ -1,11 +1,11 @@
-import 'package:builder/burgerbuilderbase.dart';
+import 'package:builder/models/burgerbuilderbase.dart';
 import 'package:builder/models/burgers/CarameladoCrocante.dart';
 import 'package:builder/models/burgers/DoceArdente.dart';
 import 'package:builder/models/burgers/TropicalTemperado.dart';
-import 'package:builder/models/burgers/burgermodel.dart';
+import 'package:builder/models/burgermodel.dart';
 import 'package:flutter/material.dart';
 
-import '../burgermaker.dart';
+import '../controller/burgermaker.dart';
 import 'IngredientesMenu.dart';
 
 class MenuItem {
@@ -74,25 +74,38 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Container(
+          color: Colors.purple,
+          height: 70,
+          width: double.infinity,
+          alignment: Alignment.center,
+          child: Text('Escolha seu burger:',
+              style: TextStyle(
+                  backgroundColor: Colors.purple,
+                  color: Colors.white,
+                  fontSize: 20)),
+        ),
         Padding(
           padding: const EdgeInsets.all(15.0),
-          child: DropdownButton<MenuItem>(
-            value: _selectedMenuBurger,
-            icon: Icon(
-              Icons.fastfood,
-              color: Colors.purple,
-              size: 30.00,
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton<MenuItem>(
+              value: _selectedMenuBurger,
+              icon: Icon(
+                Icons.fastfood,
+                color: Colors.purple,
+                size: 30.00,
+              ),
+              style: TextStyle(color: Colors.purple, fontSize: 20),
+              items: menu
+                  .map<DropdownMenuItem<MenuItem>>(
+                    (MenuItem burger) => DropdownMenuItem<MenuItem>(
+                      value: burger,
+                      child: Text(burger.label),
+                    ),
+                  )
+                  .toList(),
+              onChanged: burgerChange,
             ),
-            style: TextStyle(color: Colors.purple, fontSize: 20),
-            items: menu
-                .map<DropdownMenuItem<MenuItem>>(
-                  (MenuItem burger) => DropdownMenuItem<MenuItem>(
-                    value: burger,
-                    child: Text(burger.label),
-                  ),
-                )
-                .toList(),
-            onChanged: burgerChange,
           ),
         ),
         IngredientesMenu(burger: selectedBurger),

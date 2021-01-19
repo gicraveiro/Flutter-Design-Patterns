@@ -6,7 +6,7 @@ import 'package:builder/models/ingredientes/queijos/queijo_mussarela.dart';
 import 'package:builder/models/ingredientes/salada/alface.dart';
 import 'package:builder/models/ingredientes/salada/rucula.dart';
 
-import '../../burgerbuilderbase.dart';
+import '../burgerbuilderbase.dart';
 
 class TropicalTemperado extends BurgerBuilderBase {
   TropicalTemperado() {

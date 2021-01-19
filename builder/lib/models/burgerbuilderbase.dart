@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'models/burgers/burgermodel.dart';
+import 'burgermodel.dart';
 
 abstract class BurgerBuilderBase {
   @protected

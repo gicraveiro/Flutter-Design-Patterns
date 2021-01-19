@@ -5,7 +5,7 @@ import 'package:builder/models/ingredientes/hamburguers/carne.dart';
 import 'package:builder/models/ingredientes/p%C3%A3es/pao_australiano.dart';
 import 'package:builder/models/ingredientes/queijos/queijo_mussarela.dart';
 
-import '../../burgerbuilderbase.dart';
+import '../burgerbuilderbase.dart';
 
 class CarameladoCrocante extends BurgerBuilderBase {
   CarameladoCrocante() {

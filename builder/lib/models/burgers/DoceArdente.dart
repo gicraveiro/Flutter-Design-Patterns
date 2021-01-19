@@ -1,4 +1,4 @@
-import 'package:builder/burgerbuilderbase.dart';
+import 'package:builder/models/burgerbuilderbase.dart';
 import 'package:builder/models/ingredientes/hamburguers/carne.dart';
 import 'package:builder/models/ingredientes/molhos/geleia_de_pimenta.dart';
 import 'package:builder/models/ingredientes/p%C3%A3es/pao_de_batata.dart';

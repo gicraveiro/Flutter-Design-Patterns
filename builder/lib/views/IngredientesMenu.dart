@@ -1,4 +1,4 @@
-import 'package:builder/models/burgers/burgermodel.dart';
+import 'package:builder/models/burgermodel.dart';
 import 'package:flutter/material.dart';
 
 class IngredientesMenu extends StatelessWidget {

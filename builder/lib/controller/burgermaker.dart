@@ -1,5 +1,5 @@
-import 'burgerbuilderbase.dart';
-import 'models/burgers/burgermodel.dart';
+import '../models/burgerbuilderbase.dart';
+import '../models/burgermodel.dart';
 
 class BurgerMaker {
   BurgerBuilderBase burgerBuilder;
